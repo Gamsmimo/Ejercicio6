@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datepicker UI - Proyecto 6</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Datepicker UI</h1>
+        <p class="subtitle">Interfaz estática de un selector de fechas - Solo HTML y CSS</p>
+
+        <div class="datepicker-wrapper">
+            <label for="date-input">Selecciona una fecha</label>
+            <div class="input-container">
+                <input type="text" id="date-input" placeholder="dd / mm / yyyy" readonly>
+                <button class="calendar-btn" id="toggle-calendar">
+                    <i class="fas fa-calendar-alt"></i>
+                </button>
+            </div>
+
+            <div class="calendar" id="calendar">
+                <div class="calendar-header">
+                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <h2>December 2022</h2>
+                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="weekdays">
+                    <span>S</span>
+                    <span>M</span>
+                    <span>T</span>
+                    <span>W</span>
+                    <span>T</span>
+                    <span>F</span>
+                    <span>S</span>
+                </div>
+
+                <div class="days">
+                    <!-- Días vacíos antes del 1 -->
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <!-- Días del mes -->
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30</div>
+                    <div class="day">31</div>
+                </div>
+
+                <div class="calendar-footer">
+                    <button class="today-btn">Hoy</button>
+                </div>
+            </div>
+
+            <div class="hint">
+                <i class="fas fa-info-circle"></i>
+                Este datepicker es solo una interfaz estática. No tiene funcionalidad JavaScript.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Este script solo es para mostrar/ocultar el calendario visualmente
+        // No es parte de la funcionalidad real del datepicker
+        document.getElementById('toggle-calendar').addEventListener('click', function() {
+            const calendar = document.getElementById('calendar');
+            calendar.classList.toggle('visible');
+        });
+    </script>
+</body>
+</html>

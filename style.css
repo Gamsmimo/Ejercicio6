@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #718096;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.datepicker-wrapper {
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.input-container {
+    display: flex;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    background-color: #f8fafc;
+}
+
+.input-container:focus-within {
+    border-color: #4299e1;
+}
+
+#date-input {
+    flex: 1;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    background: transparent;
+    color: #2d3748;
+    outline: none;
+}
+
+#date-input::placeholder {
+    color: #a0aec0;
+}
+
+.calendar-btn {
+    background-color: #4299e1;
+    border: none;
+    color: white;
+    padding: 0 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.calendar-btn:hover {
+    background-color: #3182ce;
+}
+
+.calendar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.calendar.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.calendar-header h2 {
+    color: #2d3748;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.nav-btn {
+    background: #edf2f7;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4a5568;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: #e2e8f0;
+    color: #2d3748;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.day {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #2d3748;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.day:hover {
+    background-color: #edf2f7;
+}
+
+.day.empty {
+    background: transparent;
+    cursor: default;
+}
+
+.day.empty:hover {
+    background: transparent;
+}
+
+/* Día de hoy simulado */
+.day:nth-child(20) {
+    background-color: #4299e1;
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.today-btn {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.today-btn:hover {
+    background-color: #38a169;
+}
+
+.hint {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #feebc8;
+    border-radius: 10px;
+    color: #744210;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hint i {
+    font-size: 1.2rem;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .container {
+        padding: 25px;
+    }
+
+    .calendar {
+        padding: 20px;
+    }
+
+    .day {
+        height: 35px;
+    }
+}
